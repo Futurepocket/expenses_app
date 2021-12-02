@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -52,6 +54,21 @@ class _NewTransactionState extends State<NewTransaction> {
               // onChanged: (val) {
               //   amountInput = val;
               // },
+            ),
+            Container(
+              height: 70,
+              child: Row(
+                children: [
+                  Text('No Date Chosen!'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Choose Date'),
+                    style: TextButton.styleFrom(
+                        textStyle:
+                            TextStyle(color: Theme.of(context).primaryColor)),
+                  )
+                ],
+              ),
             ),
             FlatButton(
               onPressed: submitData,
