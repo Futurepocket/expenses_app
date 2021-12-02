@@ -9,66 +9,6 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Container(
-      height: 400,
-      //or ListView (less performance)
-      child: transactions.isEmpty
-          ? Column(
-              children: <Widget>[
-                Text('No transactions added yet!'),
-                Image.asset('assets/images/waiting.png'),
-              ],
-            )
-          : ListView.builder(
-              itemBuilder: (ctx, index) {
-                return Card(
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        margin: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.purple,
-                            width: 2,
-                          ),
-                        ),
-                        child: Text(
-                          //rounds decimal numbers
-                          '£' + transactions[index].amount.toStringAsFixed(2),
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            transactions[index].title,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            DateFormat.yMMMd().format(transactions[index].date),
-                            style: TextStyle(color: Colors.grey),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              },
-              itemCount: transactions.length,
-            ),
-    );
-=======
     return transactions.isEmpty
         ? LayoutBuilder(builder: (ctx, constraints) {
             return Column(
@@ -127,6 +67,5 @@ class TransactionList extends StatelessWidget {
             },
             itemCount: transactions.length,
           );
->>>>>>> 7dd5851ddfdf01b8b3cd1b0ad6f6b7e4a344aae8
   }
 }

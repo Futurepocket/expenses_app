@@ -10,6 +10,7 @@ import './widgets/chart.dart';
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   // SystemChrome.setPreferredOrientations(
+  //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 
@@ -134,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
             if (isLandscape)
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text('Show Chart'),
-                Switch(
+                Switch.adaptive(
                   value: _showChart,
                   onChanged: (val) {
                     setState(() {
@@ -154,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
             if (isLandscape)
               _showChart
                   ? Container(
-                      height: (MediaQuery.of(context).size.height * 0.3 -
+                      height: (MediaQuery.of(context).size.height * 0.6 -
                           appBar.preferredSize.height -
                           MediaQuery.of(context).padding.top),
                       child: Chart(_recentTransactions),
